@@ -1,4 +1,5 @@
-require "newman"
+require "bundler"
+Bundler.require
 
 mail_whale = Newman::Application.new do
   helpers do
@@ -28,4 +29,10 @@ mail_whale = Newman::Application.new do
   end
 end
 
-Newman::Server.simple(mail_whale, "config/environment.rb")
+settings = Newman::Settings.from_file("config/environment.rb")
+mailer = Newman::Mailer.new(settings)
+
+server = Newman::Server.new(settings, mailer)
+server.apps << mail_whale
+
+server.tick
