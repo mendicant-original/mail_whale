@@ -16,7 +16,7 @@ mail_whale = Newman::Application.new do
 
     if list.subscriber?(sender)
       forward_message :bcc => list.subscribers.join(", "),
-                      :reply_to => reply_to 
+                      :reply_to => reply_to
     else
       respond :subject => "You are not subscribed",
               :body => template("non-subscriber-error")
@@ -27,6 +27,5 @@ mail_whale = Newman::Application.new do
     respond(:subject => "FAILURE")
   end
 end
-
 
 Newman::Server.simple(mail_whale, "config/environment.rb")
