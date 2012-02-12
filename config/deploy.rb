@@ -1,5 +1,8 @@
 require 'bundler/capistrano'
 
+set :whenever_identifier, defer { application }
+require 'whenever/capistrano'
+
 set :application, "mail_whale"
 set :repository,  "git://github.com/mendicant-university/mail_whale.git"
 
