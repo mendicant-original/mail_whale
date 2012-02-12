@@ -33,6 +33,6 @@ settings = Newman::Settings.from_file("config/environment.rb")
 mailer = Newman::Mailer.new(settings)
 
 server = Newman::Server.new(settings, mailer)
-server.apps << mail_whale
+server.apps << Newman::RequestLogger << mail_whale << Newman::ResponseLogger
 
 server.tick
