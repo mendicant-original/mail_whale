@@ -1,2 +1,3 @@
 *.store
 config/*.rb
+Gemfile.lock

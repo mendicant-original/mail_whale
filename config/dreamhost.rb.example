@@ -15,3 +15,4 @@ service.default_sender   = "<<USERNAME>>@<<DOMAIN>>"
 service.polling_interval = 10
 
 application.database = "data/mail_whale.store"
+application.inbox    = "<<USERNAME>>"
