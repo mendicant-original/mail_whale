@@ -29,10 +29,5 @@ mail_whale = Newman::Application.new do
   end
 end
 
-settings = Newman::Settings.from_file("config/environment.rb")
-mailer = Newman::Mailer.new(settings)
-
-server = Newman::Server.new(settings, mailer)
-server.apps << Newman::RequestLogger << mail_whale << Newman::ResponseLogger
-
+server = Newman::Server.simple!(mail_whale, "config/environment.rb")
 server.tick
