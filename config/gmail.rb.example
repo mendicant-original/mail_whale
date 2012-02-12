@@ -1,5 +1,5 @@
 # WARNING: DO NOT HOOK THIS UP TO AN EMAIL ACCOUNT WHICH YOU CARE ABOUT
-# THE MAIL IN. JESTER *WILL* DELETE ALL OF YOUR EMAIL IF YOU DO THAT.
+# THE MAIL IN. WE *WILL* DELETE ALL OF YOUR EMAIL IF YOU DO THAT.
 
 imap.address     = "imap.gmail.com"
 imap.user        = "<<USERNAME>>@gmail.com"
@@ -18,4 +18,4 @@ service.templates_dir    = "views"
 service.default_sender   = "<<USERNAME>>@gmail.com"
 service.polling_interval = 10
 
-application.jester_db = "data/jester.store"
+application.database = "data/mail_whale.store"
