@@ -1,3 +1,5 @@
+require "fileutils"
+
 require "bundler"
 Bundler.require
 
@@ -29,5 +31,16 @@ mail_whale = Newman::Application.new do
   end
 end
 
-server = Newman::Server.simple!(mail_whale, "config/environment.rb")
-server.tick
+begin
+  if File.exists?("server.lock")
+    abort("Server is locked because of an unclean shutdown. Check "+
+          "the logs to see what went wrong, and delete server.lock "+
+          "if the problem has been resolved") 
+  end
+
+  server = Newman::Server.simple!(mail_whale, "config/environment.rb")
+  server.tick
+rescue Exception
+  FileUtils.touch("server.lock")
+  raise 
+end
