@@ -38,7 +38,12 @@ begin
           "if the problem has been resolved") 
   end
 
+  logger       = Logger.new("mail_whale.log")
+  logger.level = Logger::INFO
+
   server = Newman::Server.simple!(mail_whale, "config/environment.rb")
+  server.logger = logger
+
   server.tick
 rescue Exception
   FileUtils.touch("server.lock")

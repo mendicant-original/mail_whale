@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/mendicant-university/newman.git
-  revision: 3fcf5663ec4d28f4f17503802684aebade7fa4cb
+  revision: 1a36dfb5e8c12960968838fe17d6926053309a01
   specs:
     newman (0.3.0)
       mail (~> 2.3.0)
@@ -9,10 +9,10 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (3.2.1)
+    activesupport (3.2.2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    capistrano (2.9.0)
+    capistrano (2.11.2)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
@@ -21,12 +21,12 @@ GEM
     chronic (0.6.7)
     highline (1.6.11)
     i18n (0.6.0)
-    mail (2.3.0)
+    mail (2.3.2)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.17.2)
-    multi_json (1.0.4)
+    multi_json (1.1.0)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -39,7 +39,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    whenever (0.7.2)
+    whenever (0.7.3)
       activesupport (>= 2.3.4)
       chronic (~> 0.6.3)
 
