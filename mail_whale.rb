@@ -16,8 +16,7 @@ mail_whale = Newman::Application.new do
     reply_to ="#{settings.application.inbox}+#{params[:list_id]}@#{domain}"
 
     if list.subscriber?(sender)
-      forward_message :bcc      => list.subscribers.join(", "),
-                      :to       => reply_to,
+      forward_message :bcc => list.subscribers.join(", "),
                       :reply_to => reply_to
     else
       respond :subject => "You are not subscribed",
