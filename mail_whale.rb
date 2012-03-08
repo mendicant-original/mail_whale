@@ -45,6 +45,7 @@ begin
   server.logger = logger
 
   server.tick
+# TODO: Explain this.
 rescue Exception
   FileUtils.touch("server.lock")
   raise 
